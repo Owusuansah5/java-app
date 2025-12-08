@@ -49,8 +49,25 @@ pipeline {
         maven 'M2_HOME'
     }
     stages {
+         stage("test") {
+
+            steps {
+                script {
+                    echo "Testing the aplication..."
+                    echo "executing pipeline for branch $BRANCH_NAME"
+                    
+
+                }
+            }
+        }
 	
         stage("build jar") {
+            when {
+               expression {
+                  BRANCH_NAME == "main"
+
+               }
+            }
 
             steps {
                 script {
@@ -78,6 +95,7 @@ pipeline {
             steps {
                 script {
                     echo "Deploying the aplication..."
+                    echo "executing pipeline for branch $BRANCH_NAME"
                   
 
                 }
