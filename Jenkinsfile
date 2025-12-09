@@ -72,7 +72,7 @@ pipeline {
             steps {
                 script {
                     echo "bUilding the aplication..."
-                    sh 'mvn package'
+                    sh 'mvn clean package -DskipTests'
 
                 }
             }
@@ -95,7 +95,11 @@ pipeline {
             steps {
                 script {
                     echo "Deploying the aplication..."
+<<<<<<< HEAD
+                  echo "executing pipeline for branch $BRANCH_NAME"
+=======
                     echo "executing pipeline for branch $BRANCH_NAME"
+>>>>>>> 3baa5e0853a6a8f06f45143e2107ff7851038481
                   
 
                 }
