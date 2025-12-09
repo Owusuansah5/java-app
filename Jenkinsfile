@@ -42,14 +42,13 @@ pipeline {
 }
 */
 
-pipeline {
-
+pipeline { 
     agent any
     tools {
         maven 'M2_HOME'
     }
     stages {
-         stage("test") {
+      stage("test") {
 
             steps {
                 script {
@@ -91,19 +90,24 @@ pipeline {
             }
          }
          stage("Deploy") {
-
             steps {
-                script {
-                    echo "Deploying the aplication..."
-<<<<<<< HEAD
-                  echo "executing pipeline for branch $BRANCH_NAME"
-=======
+               script {
+                  echo "Deploying the aplication.."
                     echo "executing pipeline for branch $BRANCH_NAME"
->>>>>>> 3baa5e0853a6a8f06f45143e2107ff7851038481
-                  
+                    echo "executing pipeline for branch $BRANCH_NAME"
 
-                }
+               }
             }
-        }
-      }
+
+         }
+   }
 }
+               
+
+   
+         
+
+            
+
+
+               
